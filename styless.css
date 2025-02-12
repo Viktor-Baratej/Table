@@ -1,4 +1,6 @@
-* {
+/* * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -7,10 +9,10 @@ body {
   color: black;
   font-size: 35px;
   display: flex;
-  justify-content: center; /* Горизонтальне центрування */
-  align-items: center; /* Вертикальне центрування */
-  height: 100vh; /* Висота сторінки */
-  margin: 0; /* Забираємо стандартні відступи */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .table-section {
@@ -64,4 +66,110 @@ th {
 td:hover {
   cursor: pointer;
   background-color: brown;
+} */
+* {
+  box-sizing: border-box;
+}
+
+/* Змінні кольорів */
+:root {
+  --bg-color: beige;
+  --text-color: black;
+  --table-bg: rgb(180, 165, 143);
+  --th-bg: aquamarine;
+  --row-odd-bg: bisque;
+  --row-even-bg: burlywood;
+  --hover-bg: brown;
+  --total-bg: rgb(201, 125, 125);
+}
+
+/* Темна тема */
+.dark-theme {
+  --bg-color: #1a1a1a;
+  --text-color: white;
+  --table-bg: #333;
+  --th-bg: #444;
+  --row-odd-bg: #2d2d2d;
+  --row-even-bg: #3a3a3a;
+  --hover-bg: #555;
+  --total-bg: #770000;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Кнопка перемикання теми */
+#theme-toggle {
+  position: absolute;
+  top: 30px;
+  right: 460px;
+  padding: 10px 20px;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--th-bg);
+  color: var(--text-color);
+  border-radius: 10px;
+}
+
+#theme-toggle:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Стилі таблиці */
+.table-section {
+  padding-bottom: 100px;
+  padding-right: 40px;
+  padding-left: 40px;
+  max-width: 1220px;
+  width: 100%;
+  background-color: var(--table-bg);
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 100px;
+}
+
+th,
+tr,
+td {
+  border: 1px solid var(--text-color);
+  padding: 10px 10px;
+}
+
+th {
+  background-color: var(--th-bg);
+}
+
+.Total-price {
+  background-color: var(--total-bg);
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: var(--row-odd-bg);
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: var(--row-even-bg);
+}
+
+td:hover {
+  cursor: pointer;
+  background-color: var(--hover-bg);
 }
